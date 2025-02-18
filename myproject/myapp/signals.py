@@ -17,4 +17,10 @@ def user_saved_signal(sender, instance, **kwargs):
     # logger.info("Signal execution finished...")
 
     #Q2
-    logger.info(f"Signal Handler: Running in thread {threading.get_ident()}")
+    # logger.info(f"Signal Handler: Running in thread {threading.get_ident()}")
+
+    #Q3
+    logger.info("Signal Handler: Start")
+    # Raise an exception to test rollback
+    raise Exception("Simulating an error in signal handler")
+    logger.info("Signal Handler: End")  # This line will not execute
